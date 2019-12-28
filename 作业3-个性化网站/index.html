@@ -1,0 +1,639 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>樱花动漫</title>
+		<meta charset="utf-8">
+		<meta name="Author" content="潭州学院-阿飞老师">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+		<style type="text/css" id='css'>
+			#progress{
+				position:fixed;
+				background:#000;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				z-index:99999;
+			}
+			#progress p{
+				width:0px;
+				height:30px;
+				border-radius:3px;
+				background:#ffcccc;
+				color:#330000;
+				font-size:14px;
+				font-weight:bold;
+				line-height:30px;
+				text-align:center;
+				overflow:hidden;
+				font-family:'Microsoft yahei';
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin-top:-15px;
+				margin-left:-250px;
+			}
+			body{
+				overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id='progress'>
+			<p>0%</p>
+		</div>
+
+		<script>
+			var oP = document.getElementById('progress').getElementsByTagName('p')[0];
+			var oCss = document.getElementById('css');
+			function move(num){
+				clearInterval( oP.timer );
+				oP.timer = setInterval(function(){
+					if ( parseInt( oP.innerHTML ) < num )
+					{
+						var s = parseInt( oP.innerHTML ) + 1;
+						var w = 500 * s / 100;
+						oP.innerHTML = s + '%';
+						oP.style.width = w + 'px';
+					}
+					else
+					{
+						clearInterval( oP.timer );
+						if ( num == 100 )
+						{
+							oP.parentNode.parentNode.removeChild(oP.parentNode);
+							oCss.parentNode.removeChild(oCss);
+							var oScript = document.getElementsByClassName('pMove');
+							var length = oScript.length
+							for ( var i=length-1;i>=0;i-- )
+							{
+								oScript[i].parentNode.removeChild(oScript[i]);
+							}
+						}
+					}
+				},10);
+			};
+		</script>
+
+		<!-- header start -->
+		<div id="header">
+			<div id="h_main">
+				<div class="h_m_left">
+					<ul>
+						<li><a href="">樱花动漫网</a><span>|</span></li>
+						<li><a href="">首页</a><span>|</span></li>
+						<li><a href="">动漫电影</a><span>|</span></li>
+						<li><a href="">日本动漫</a><span>|</span></li>
+						<li><a href="">国产动漫</a><span>|</span></li>
+						<li><a href="">美国动漫</a><span>|</span></li>
+						<li><a href="">我的动漫</a></li>
+                    </ul>
+				</div>
+				<div class="h_m_right">
+					<div class='h_m_r_login'>
+						<a href="">登录</a> | 
+						<a href="">注册</a>
+					</div>
+					<div class='h_m_r_shop'>
+						<span class=" iconfont">&#xe654;</span><span>我的收藏( </span><span id="num">0</span><span> )</span>
+						<div class="h_m_r_s_hide">
+							赶紧看喜欢的动漫，精彩不容错过！
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end header-->
+
+		<script class='pMove'>
+			move(20);
+		</script>
+
+		<!--nav start-->
+		<div id="nav_wrap">
+			<div id="nav">
+				<div class="n_logo"><a href=""></a></div>
+				<div class="n_main">
+					<ul>
+						<li class="n_m_one"><a href="">剧场版</a></li>
+						<li class="n_m_one"><a href="">OVA版</a></li>
+						<li class="n_m_one"><a href="">真人版</a></li>
+						<li class="n_m_one"><a href="">宣传版</a></li>
+						<li class="n_m_one"><a href="">特典版</a></li>
+						<li class="n_m_one"><a href="">TV版</a></li>
+						<li class="n_m_one"><a href="">最近更新</a></li>
+						<li><a href="">留言</a></li>
+						<li><a href="">排行榜</a></li>
+					</ul>
+				</div>
+				<div class="n_search">
+					<div class="n_s_left">
+						<input type="text" />
+						<div class="n_s_l_tip">
+							<a href="">名侦探柯南</a>
+						</div>
+					</div>
+					<div class="n_s_right  iconfont">&#xe62a;</div>
+					<div class="n_s_hide">
+						<ul>
+							<li><a href=""><span class="n_s_h_title">名侦探柯南</span><span class="n_s_h_num">约有6件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">刀剑神域</span><span class="n_s_h_num">约有1件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">东京食尸鬼</span><span class="n_s_h_num">约有5件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">斩，赤红之瞳</span><span class="n_s_h_num">约有7件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">天行九歌</span><span class="n_s_h_num">约有26件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">秦时明月</span><span class="n_s_h_num">约有5件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">灼眼的夏娜</span><span class="n_s_h_num">约有6件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">罪恶王冠</span><span class="n_s_h_num">约有3件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">进击的巨人</span><span class="n_s_h_num">约有2件</span></a></li>
+							<li><a href=""><span class="n_s_h_title">妖狐小红娘</span><span class="n_s_h_num">约有1件</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="nav_wrap_product">
+				<div class="nav_wrap_p_main">
+					<ul class="ul1">
+						<li>
+							<img src="img/nav/mingzhtan.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">名侦探柯南</p>
+							<p class="nav_wrap_p_m_price">真相只有一个</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/daojian.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">刀剑神域</p>
+							<p class="nav_wrap_p_m_price">游戏世界</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/qinshi.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">秦时明月</p>
+							<p class="nav_wrap_p_m_price">百家争鸣</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/dongjing.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">东京喰种</p>
+							<p class="nav_wrap_p_m_price">创造出一个新世界</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/zhuoyan.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">灼眼的夏娜</p>
+							<p class="nav_wrap_p_m_price">燃起烈焰</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/zuie.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">罪恶王冠</p>
+							<p class="nav_wrap_p_m_price">守护一切</p>
+						</li>
+					</ul>
+					<ul class="ul2">
+						<li>
+							<img src="img/nav/yaohu.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">妖狐小红娘</p>
+							<p class="nav_wrap_p_m_price">我为自己而战</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/tianxing.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">天行九歌</p>
+							<p class="nav_wrap_p_m_price">这个天下我要99</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/wangqiu.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">网球王子</p>
+							<p class="nav_wrap_p_m_price">外旋发球</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/mingyun.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">命运之夜</p>
+							<p class="nav_wrap_p_m_price">战斗是使命</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/mofa.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">魔法禁书目录</p>
+							<p class="nav_wrap_p_m_price">bilibili</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+					</ul>
+					<ul class="ul3">
+						<li>
+							<img src="img/nav/haizei.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">海贼王</p>
+							<p class="nav_wrap_p_m_price">扬起胜利的风帆</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/huoyin.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">火影忍者</p>
+							<p class="nav_wrap_p_m_price">有话直说就是我的忍道</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+						<li>
+							<img src="img/nav/modao.png" alt="小米手机5" />
+							<p class="nav_wrap_p_m_title">魔道祖师</p>
+							<p class="nav_wrap_p_m_price">曲终人不散</p>
+							<div class="nav_wrap_p_m_border"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--end nav-->
+
+		<script class='pMove'>
+			move(35);
+		</script>
+
+		<!-- banner start -->
+		<div id="banner">
+			
+			<!-- 轮播图 -->
+			<div class="b_main">
+				<div class="b_m_pic">
+					<ul>
+						<li style="display:block;"><a href=""><img src="img/banner/banner1.png" alt="" /></a></li>
+						<li><a href=""><img src="img/banner/banner2.png" alt="" /></a></li>
+						<li><a href=""><img src="img/banner/banner3.png" alt="" /></a></li>
+						<li><a href=""><img src="img/banner/banner4.png" alt="" /></a></li>
+						<li><a href=""><img src="img/banner/banner5.png" alt="" /></a></li>
+					</ul>
+				</div>
+				<div class="b_m_tab">
+					<ul>
+						<li class="click"></li><li></li><li></li><li></li><li></li>
+					</ul>
+				</div>
+				<div class="b_m_btn">
+					<div id="b_m_b_left"></div>
+					<div id="b_m_b_right"></div>
+				</div>
+			</div>
+
+			<div class="b_nav">
+				<ul>
+					<li>
+						<a href=""><span class="b_n_pro">热血 格斗 冒险</span><span class="b_n_arrow  iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide">
+							<ul>
+								<li><a href="">
+										<img src="img/banner/nav2/first/1.jpg" alt="" />
+										<span class="b_n_h_title">刀剑神域</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/2.jpg" alt="" />
+										<span class="b_n_h_title">桐人</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/3.jpg" alt="" />
+										<span class="b_n_h_title">亚丝娜</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/4.jpg" alt="" />
+										<span class="b_n_h_title">游戏世界</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/5.jpg" alt="" />
+										<span class="b_n_h_title">跨越生命</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/6.jpg" alt="" />
+										<span class="b_n_h_title">黑衣剑客</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">恋爱 校园 搞笑</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:265px;height:495px;padding:0;">
+				<ul>
+					<li><a href="">
+										<img src="img/banner/nav2/first/7.jpg" alt="" />
+										<span class="b_n_h_title">高木同学</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/8.jpg" alt="" />
+										<span class="b_n_h_title">捉弄你</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/9.jpg" alt="" />
+										<span class="b_n_h_title">共同快乐</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/10.jpg" alt="" />
+										<span class="b_n_h_title">校园生活</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/11.jpg" alt="" />
+										<span class="b_n_h_title">青春气息</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+								<li><a href="">
+										<img src="img/banner/nav2/first/12.jpg" alt="" />
+										<span class="b_n_h_title">珍惜时光</span>
+										<span class="b_n_h_buy">观看</span></a></li>
+				</ul>
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">运动 竞技</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:795px;height:495px;padding:0;">
+							3
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">童话 亲子 教育</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:795px;height:495px;padding:0;">
+							4
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">神魔 机战 科幻</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:795px;height:495px;padding:0;">
+							5
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">励志 剧情</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:495px;height:495px;padding:0;">
+							6
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">青春 魔法 战争</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:495px;height:495px;padding:0;">
+							7
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">后宫 社会</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:295px;height:495px;padding:0;">
+							8
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">童话 神话</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:295px;height:495px;padding:0;">
+							9
+						</div>
+					</li>
+					<li>
+						<a href=""><span class="b_n_pro">真人 虚构</span><span class="b_n_arrow iconfont">&#xe60c;</span></a>
+						<div class="b_n_hide" style="width:295px;height:495px;padding:0;">
+							10
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end banner -->
+
+		<script class='pMove'>
+			move(50);
+		</script>
+
+		<!--hot start-->
+		<div id="hot">
+			<div class="h_list">
+				<ul>
+					<li class="l1"><a href=""><span class="h_l_icon iconfont">&#xe665;</span><span class="h_l_txt">日语</span></a></li>
+					<li class="l2"><a href=""><span class="h_l_icon iconfont">&#xe609;</span><span class="h_l_txt">国语</span></a></li>
+					<li class="l3"><a href=""><span class="h_l_icon iconfont">&#xe60b;</span><span class="h_l_txt">粤语</span></a></li>
+					<li class="l4"><a href=""><span class="h_l_icon iconfont">&#xe614;</span><span class="h_l_txt">英语</span></a></li>
+					<li class="l5"><a href=""><span class="h_l_icon iconfont">&#xe601;</span><span class="h_l_txt">韩语</span></a></li>
+					<li class="l6"><a href=""><span class="h_l_icon iconfont">&#xe6ae;</span><span class="h_l_txt">方言</span></a></li>
+				</ul>
+			</div>
+			<div class="h_img1 h_img">
+				<a href=""><img src="img/hot/1.png" alt="" width='316' height='170' /></a>
+			</div>
+			<div class="h_img2 h_img">
+				<a href=""><img src="img/hot/2.png" alt="" width='316' height='170' /></a>
+			</div>
+			<div class="h_img3 h_img">
+				<a href=""><img src="img/hot/3.png" alt="" width='316' height='170' /></a>
+			</div>
+		</div>
+		<!--end hot-->
+
+		<script class='pMove'>
+			move(70);
+		</script>
+
+		<!--starGoods start-->
+		<div id="starGoods">
+			<div class="s_title">
+				<h2>最新更新</h2>
+				<div class="s_t_btn">
+					<div class="s_t_b_left iconfont">&#xe600;</div>
+					<div class="s_t_b_right iconfont click">&#xe60c;</div>
+				</div>
+			</div>
+			<div class="s_goods">
+				<ul class='s_g_content'>
+                
+                
+                
+                </ul>
+			</div>
+		</div>
+		<!--end !--starGoods-->
+
+		<script class='pMove'>
+			move(80);
+		</script>
+		
+		<!--bgcolor start 解决背景颜色不同-->
+		<div id="bgcolor">
+			
+			<!-- smart start -->
+			<div id="smart">
+				<div class="s_title">
+					<h2 class="s_t_h2">火热动漫</h2>
+					<a href="" class="s_t_all">查看全部<span class="iconfont">&#xe625;</span></a>
+				</div>
+				<div class="s_content">
+					<ul>
+						<li class="first">
+							<img src="img/smart/1.jpg" width='233' height='614'>
+						</li>
+						<li class="s_c_bottom">
+							<a href="" class="s_c_img">
+								<img src="img/smart/2.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">东京喰种</a>
+							<p class="s_c_detail">创造出一个人与喰种共存的世界</p>
+							<p class="s_c_price"></p>
+						</li>
+						<li class="s_c_bottom tag_new">
+							<a href="" class="s_c_img">
+								<img src="img/smart/3.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">叛逆的鲁鲁修</a>
+							<p class="s_c_detail">无所作为的人生,只是个活着的生命,跟死没有差别</p>
+							<p class="s_c_price"></p>
+						</li>
+						<li class="s_c_bottom tag_new">
+							<a href="" class="s_c_img">
+								<img src="img/smart/4.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">命运之夜</a>
+							<p class="s_c_detail">钢铁之身，琉璃之心</p>
+							<p class="s_c_price"></p>
+						</li>
+						<li class="s_c_bottom s_c_none">
+							<a href="" class="s_c_img">
+								<img src="img/smart/5.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">斩！赤红之瞳</a>
+							<p class="s_c_detail"> 因为我的心告诉我那边才是正确的</p>
+							<p class="s_c_price"></p>
+						</li>
+						<li>
+							<a href="" class="s_c_img">
+								<img src="img/smart/6.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">罪恶王冠</a>
+							<p class="s_c_detail">戴上罪之王冠，即使背负上所有的罪恶与孤独</p>
+							<p class="s_c_price"></p>
+						</li>
+						<li>
+							<a href="" class="s_c_img">
+								<img src="img/smart/7.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">夏目友人帐</a>
+							<p class="s_c_detail">只有喜欢的人才会懂！</p>
+							<p class="s_c_price"></p>
+						</li>
+						<li>
+							<a href="" class="s_c_img">
+								<img src="img/smart/8.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">名侦探柯南</a>
+							<p class="s_c_detail">就是因为生命有限才更显得可贵，就因为有限人们才会努力</p>
+							<p class="s_c_price"></p>
+						</li>
+						<li class="s_c_none">
+							<a href="" class="s_c_img ">
+								<img src="img/smart/9.jpg" alt="" />
+							</a>
+							<a href="" class="s_c_title">天行九歌</a>
+							<p class="s_c_detail">天空没有痕迹，风雨已在心中</p>
+							<p class="s_c_price"></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<!--end smart--></div>
+		<!--end bgcolor-->
+
+		<script class='pMove'>
+			move(90);
+		</script>
+
+		<!--footer start-->
+		<div id="footer">
+			<div class="f_service">
+				<ul>
+					<li><a href=""><span class="iconfont">&#xe60a;</span>动漫排行榜</a></li>
+					<li><a href=""><span class="iconfont">&#xe64c;</span>动漫大全</a></li>
+					<li><a href=""><span class="iconfont">&#xe605;</span>动漫专题</a></li>
+					<li><a href=""><span class="iconfont">&#xe609;</span>动漫地图</a></li>
+					<li style="border:none;"><a href=""><span class="iconfont">&#xe6b6;</span>给我留言</a></li>
+				</ul>
+			</div>
+			<div class="f_info">
+				<div class="f_i_left">
+					<ul>
+						<li class="first">帮助中心</li>
+						<li><a href=''>动漫指南</a></li>
+						<li><a href=''>搜索方法</a></li>
+						<li><a href=''>好番推荐</a></li>
+					</ul>
+					<ul>
+						<li class="first">服务支持</li>
+						<li><a href=''>看后评价</a></li>
+						<li><a href=''>自助服务</a></li>
+						<li><a href=''>相关下载</a></li>
+					</ul>
+					<ul>
+						<li class="first">动漫之家</li>
+						<li><a href=''>追番之家</a></li>
+						<li><a href=''>服务网点</a></li>
+						<li><a href=''>预约服务</a></li>
+					</ul>
+					<ul>
+						<li class="first">关于动漫</li>
+						<li><a href=''>了解动漫</a></li>
+						<li><a href=''>加入动漫</a></li>
+						<li><a href=''>联系我们</a></li>
+					</ul>
+					<ul>
+						<li class="first">关注我们</li>
+						<li><a href=''>新浪微博</a></li>
+						<li><a href=''>樱花部落</a></li>
+						<li><a href=''>官方微信</a></li>
+					</ul>
+					<ul>
+						<li class="first">特色服务</li>
+						<li><a href=''>F 码通道</a></li>
+						<li><a href=''>动漫移动</a></li>
+						<li><a href=''>防伪查询</a></li>
+					</ul>
+
+				</div>
+				<div class="f_i_right">
+					<p class='p1'>400-100-5678</p>
+					<p class='p2'>周一至周日 8:00-18:00 </p>
+					<p class='p3'>（仅收市话费）</p>
+					<p class='p4'><a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin=1352507209&site=qq&menu=yes'><span class="iconfont">&#xe63e;</span>24小时在线客服</a></p>
+				</div>
+			</div>
+			<div class="f_link">
+				<div class="f_l_main">
+					<div class="f_l_m_left">
+						<img src="img/lan-logo.png" width=36 height=36 align='top' />
+						<p>
+							<a href="">樱花动漫官网</a>|
+							<a href="">动漫网</a>|
+							<a href="">MIUI</a>|
+							<a href="">漫聊</a>|
+							<a href="">多看书城</a>|
+							<a href="">RSS订阅</a>|
+							<a href="">视频电话</a>|
+							<a href="">动漫后院</a>|
+							<a href="">樱花漫画店</a>|
+							<a href="">樱花漫画直营店</a>|
+							<a href="">樱花动漫盟</a>|
+							<a href="">问题反馈</a>|
+							<a href="">Select Region</a>
+						</p>
+						<span>             Copyright © 2018 樱花动漫 www.imomoe.jp</span>
+					</div>
+					<div class="f_l_m_right">
+						<a href=""><img src="img/footer/v-logo-1.png" alt="" /></a>
+						<a href=""><img src="img/footer/v-logo-2.png" alt="" /></a>
+						<a href=""><img src="img/footer/v-logo-3.png" alt="" /></a>
+					</div>
+				</div>
+				<div class="f_l_bottom">
+					
+				</div>
+			</div>
+		</div>
+		<!--end footer-->
+
+		<script class='pMove'>
+			move(100);
+		</script>
+		
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>
