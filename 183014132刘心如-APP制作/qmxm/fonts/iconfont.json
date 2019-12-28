@@ -1,0 +1,65 @@
+{
+  "id": "1575124",
+  "name": "news",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "386364",
+      "name": "新闻",
+      "font_class": "xinlang",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "2132504",
+      "name": "新闻出版",
+      "font_class": "guoji",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "2205268",
+      "name": "新闻，新闻，发布。推广",
+      "font_class": "pengpai",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "2767897",
+      "name": "新闻",
+      "font_class": "wangyi",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "3112574",
+      "name": "新闻",
+      "font_class": "fenghuang",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "3900479",
+      "name": "新闻",
+      "font_class": "souhu",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "10936597",
+      "name": "nav_发布新闻",
+      "font_class": "tengxun",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "11748398",
+      "name": "网络",
+      "font_class": "yangshi",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    }
+  ]
+}

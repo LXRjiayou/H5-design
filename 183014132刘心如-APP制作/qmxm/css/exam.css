@@ -1,0 +1,43 @@
+.mui-bar-nav{
+	background-color: #000000;
+}
+.mui-bar-nav .mui-title,.mui-bar-nav a{
+	color: #FFFFFF;
+	font-weight: 600;
+}
+.mui-grid-view.mui-grid-9{background: #FFFFFF;}
+.mui-table-view.mui-grid-view .mui-table-view-cell span{
+	font-size: 2em;
+	padding: 0.8rem;
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 1rem;
+	background-image: none;
+}
+.mui-icon.icon-yangshi{
+	background-color: #2AC845;
+}
+.icon-tengxun{
+	background-color: #007AFF;
+}
+.icon-xinlang{
+	background-color: #F6FA1C;
+}
+.icon-souhu{
+	background-color: #4FF8AB;
+}
+.icon-fenghuang{
+	background-color: #B292F7;
+}
+.icon-wangyi{
+	background-color: #F5D5B4;
+}
+.icon-pengpai{
+	background-color: #741CFA;
+}
+.icon-guoji{
+	background-color: #F75168;
+}
+.mui-icon-more{
+	background-color: #B3F0A8;
+}
